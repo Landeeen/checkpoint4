@@ -44,6 +44,7 @@ async function updateTableware(office_id, id, tableware) {
       "UPDATE tableware SET name = $3, qty = $4, office_id = $5 WHERE office_id = $1 AND id = $2",
       [office_id, id, tableware.name, tableware.qty, tableware.office_id]
     );
+    return;
   } catch (err) {
     console.log(err);
   }
@@ -55,6 +56,7 @@ async function deleteTableware(office_id, id) {
       "DELETE FROM tableware WHERE office_id = $1 AND id = $2",
       [office_id, id]
     );
+    return;
   } catch (err) {
     console.log(err);
   }
@@ -102,6 +104,7 @@ async function updateOffice(id, office) {
       "UPDATE office SET name = $2, location = $3, starting_year = $4 WHERE id = $1",
       [id, office.name, office.location, office.starting_year]
     );
+    return;
   } catch (err) {
     console.log(err);
   }
@@ -110,6 +113,7 @@ async function updateOffice(id, office) {
 async function deleteOffice(id) {
   try {
     const res = await pool.query("DELETE FROM office WHERE id = $1", [id]);
+    return;
   } catch (err) {
     console.log(err);
   }
