@@ -11,11 +11,11 @@ async function readAllTableware() {
   }
 }
 
-async function createTableware(name, qty) {
+async function createTableware(tableware) {
   try {
     const res = await pool.query(
       "INSERT INTO Tableware (name, qty) VALUES ($1, $2)",
-      [name, qty]
+      [tableware.name, tableware.qty]
     );
     return;
   } catch (err) {
