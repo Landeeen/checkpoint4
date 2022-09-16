@@ -66,7 +66,7 @@ app.delete("/office/:id", async (req, res) => {
 app.delete("/office/:office_id/tableware/:id", async (req, res) => {
   const office_id = req.params.office_id;
   const id = req.params.id;
-  res.json(await deleteOffice(office_id, id));
+  res.json(await deleteTableware(office_id, id));
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
